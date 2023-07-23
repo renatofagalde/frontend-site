@@ -6,7 +6,7 @@ import { PrimeNGConfig } from 'primeng/api';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-primeng-blocks';
+  title = 'dynamic-website';
 
   constructor(private primengConfig: PrimeNGConfig) {}
 

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-primeng-blocks": {
+    "dynamic-website": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-primeng-blocks",
+            "outputPath": "dist/dynamic-website",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-primeng-blocks:build:production"
+              "browserTarget": "dynamic-website:build:production"
             },
             "development": {
-              "browserTarget": "angular-primeng-blocks:build:development"
+              "browserTarget": "dynamic-website:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-primeng-blocks:build"
+            "browserTarget": "dynamic-website:build"
           }
         },
         "test": {
