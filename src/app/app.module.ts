@@ -10,16 +10,7 @@ import {PanelModule} from "primeng/panel";
 import {StyleClassModule} from "primeng/styleclass";
 import {RippleModule} from "primeng/ripple";
 import {AvatarModule} from "primeng/avatar";
-import {Routes} from "@angular/router";
 
-const routes: Routes = [
-
-    {path: 'site', loadChildren: 'app/inicio/inicio.module#InicioModule'},
-    {path: '', redirectTo: 'site', pathMatch: 'full'},
-    {path: 'nao-autorizado', component: NaoAutorizadoComponent},
-    {path: 'pagina-nao-encontrada', component: PaginaNaoEncontradaComponent},
-    {path: '**', redirectTo: 'pagina-nao-encontrada'}
-];
 
 @NgModule({
     declarations: [
@@ -34,7 +25,8 @@ const routes: Routes = [
         ButtonModule,
         CheckboxModule,
         PanelModule,
-        AvatarModule
+        AvatarModule,
+        AppRoutingModule
     ],
     providers: [],
     bootstrap: [AppComponent]

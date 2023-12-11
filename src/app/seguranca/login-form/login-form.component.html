@@ -1,0 +1,41 @@
+<div class="div-fullscreen">
+
+    <div class="container">
+
+        <img class="logo" src="../../../assets/logo.png"/>
+
+        <div class="content">
+
+            <p>Nunca compartilhe sua <strong>senha</strong></p>
+
+            <form autocomplete="off" #f="ngForm">
+
+                <input pInputText type="email" name="usuario" placeholder="E-mail" ngModel required #usuario>
+                <input pInputText type="password" name="senha" placeholder="Senha" ngModel required #senha>
+
+                <button pButton type="submit" label="Login" [disabled]="!f.valid || blocked" (click)="login(usuario.value, senha.value); senha.value = '';"></button>
+
+            </form>
+
+        </div>
+
+        <div style="padding-top: 18px;">
+            <a routerLink="/novaSenha">Esqueci a senha</a>
+            <i class="pi pi-wifi fa-5x {{statusIsConnected?'text-success':'text-error'}}" style="font-size: 1.5rem;margin-left: 1rem"></i>
+        </div>
+
+
+    </div>
+
+
+    <div class="footer">
+        <div *ngIf="deviceService.isDesktop(); else mobile">
+            <a href="https://www.gogetssl.com" rel="nofollow" title="GoGetSSL Site Seal Logo" ><img src="https://gogetssl-cdn.s3.eu-central-1.amazonaws.com/site-seals/gogetssl_siteseal_animated.gif" width="180" height="58" title="GoGetSSL Site Seal, Protected website" alt="GoGetSSL Site Seal"/></a>
+        </div>
+        <ng-template #mobile>
+            <a href="https://www.gogetssl.com" rel="nofollow" title="GoGetSSL Site Seal Logo"><img src="https://gogetssl-cdn.s3.eu-central-1.amazonaws.com/site-seals/gogetssl-static-seal.svg" width="105" height="34" title="GoGetSSL Site Seal, Protected website" alt="GoGetSSL Site Seal"/></a>
+        </ng-template>
+    </div>
+
+
+</div>

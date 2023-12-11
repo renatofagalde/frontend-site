@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "heroku-postbuild": "ng build",
-    "postinstall": "ng build --configuration production --vendor-chunk --aot=true  --output-hashing=all"
+    "postinstall": "ng build --configuration prd --vendor-chunk --aot=true  --output-hashing=all"
   },
   "private": true,
   "dependencies": {
