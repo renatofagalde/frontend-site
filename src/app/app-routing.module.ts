@@ -6,7 +6,7 @@ import {PaginaNaoEncontradaComponent} from "./miscellaneous/pagina-nao-encontrad
 
 const routes: Routes = [
 
-  {path: 'site', loadChildren: ()=>import('./site/site-routing.module').then(fn=>fn.InicioRoutingModule)},
+  {path: 'site', loadChildren: ()=>import('./site/site.module').then(fn=>fn.SiteModule)},
   {path: '', redirectTo: 'site', pathMatch: 'full'},
   {path: 'nao-autorizado', component: NaoAutorizadoComponent},
   {path: 'pagina-nao-encontrada', component: PaginaNaoEncontradaComponent},

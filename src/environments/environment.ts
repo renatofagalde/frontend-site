@@ -5,8 +5,8 @@
 
 export const environment = {
     production: true,
-    apiURL: "https://dev.site.likwi-api.com/sites/"
+    apiURL: "https://dev.site.likwi-api.com/sites"
     , title: "[LH]Site",
-    appVersion: require('../../package.json').version + '-local',
+    //appVersion: require('../../package.json').version + '-local',
 };
 
