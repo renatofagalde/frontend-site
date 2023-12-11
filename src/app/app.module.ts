@@ -10,6 +10,12 @@ import {PanelModule} from "primeng/panel";
 import {StyleClassModule} from "primeng/styleclass";
 import {RippleModule} from "primeng/ripple";
 import {AvatarModule} from "primeng/avatar";
+import {Routes} from "@angular/router";
+import {PaginaNaoEncontradaComponent} from "./miscellaneous/pagina-nao-encontrada.component";
+import {NaoAutorizadoComponent} from "./miscellaneous/nao-autorizado.component";
+import {CoreModule} from "./miscellaneous/core.module";
+
+
 
 @NgModule({
     declarations: [
@@ -20,11 +26,8 @@ import {AvatarModule} from "primeng/avatar";
         AppRoutingModule,
         BrowserAnimationsModule,
         StyleClassModule,
-        RippleModule,
-        ButtonModule,
-        CheckboxModule,
-        PanelModule,
-        AvatarModule
+        CoreModule
+
     ],
     providers: [],
     bootstrap: [AppComponent]
