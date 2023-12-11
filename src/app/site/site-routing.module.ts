@@ -19,5 +19,5 @@ const routes: Routes = [
     ],
     exports: [RouterModule]
 })
-export class InicioRoutingModule {
+export class SiteRoutingModule {
 }

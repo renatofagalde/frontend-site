@@ -25,8 +25,7 @@ import {AvatarModule} from "primeng/avatar";
         ButtonModule,
         CheckboxModule,
         PanelModule,
-        AvatarModule,
-        AppRoutingModule
+        AvatarModule
     ],
     providers: [],
     bootstrap: [AppComponent]
