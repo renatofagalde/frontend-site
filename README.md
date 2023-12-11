@@ -29,3 +29,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Links
 - https://itnext.io/how-to-deploy-angular-application-to-heroku-1d56e09c5147
+
+<hr/>
+
