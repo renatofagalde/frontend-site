@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHandler} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {map, Observable} from 'rxjs';
+import * as _ from 'lodash'
 
 export class NotAuthenticatedError {
 }
@@ -11,7 +12,6 @@ export class LikwiHttp extends HttpClient {
     constructor(private httpHandler: HttpHandler) {
         super(httpHandler);
     }
-
 
     public override delete<T>(url: string, options?: any): Observable<T> {
         return this.fazerRequisicao<T>(() => super.delete<T>(url, options));
@@ -30,7 +30,10 @@ export class LikwiHttp extends HttpClient {
     }
 
     public override get<T>(url: string, options?: any): Observable<T> {
-        return this.fazerRequisicao<T>(() => super.get<T>(url, options));
+        return this.fazerRequisicao<T>(() => super.get<T>(url, options)
+            .pipe(map(response=> {
+                return _.mapKeys(response,(v,k)=>_.camelCase(k));
+            } )));
     }
 
     public override post<T>(url: string, body: any, options?: any): Observable<T> {
@@ -42,7 +45,8 @@ export class LikwiHttp extends HttpClient {
     }
 
     private fazerRequisicao<T>(fn: Function): Observable<T> {
-            return fn();
+        return fn();
     }
+
 
 }

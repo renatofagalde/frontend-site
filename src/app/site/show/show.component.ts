@@ -1,31 +1,34 @@
 import {Component, OnInit} from '@angular/core';
 import {PrimeNGConfig} from "primeng/api";
 import {SiteService} from "../site.service";
+import {Title} from "@angular/platform-browser";
+import {Site} from "../site";
+
 
 @Component({
-  selector: 'app-show',
-  templateUrl: './show.component.html',
-  styleUrls: ['./show.component.scss']
+    selector: 'app-show',
+    templateUrl: './show.component.html',
+    styleUrls: ['./show.component.scss']
 })
-export class ShowComponent implements OnInit{
-  title: string | undefined = 'Estrutura padrão do site';
+export class ShowComponent implements OnInit {
 
-  constructor(private primengConfig: PrimeNGConfig,private service: SiteService) {
-  }
+    site!: any;
 
-  ngOnInit() {
-    console.log("init")
-    this.primengConfig.zIndex = {
-      modal: 1100,    // dialog, sidebar
-      overlay: 1000,  // dropdown, overlaypanel
-      menu: 1000,     // overlay menus
-      tooltip: 1100   // tooltip
-    };
+    constructor(private primengConfig: PrimeNGConfig, private service: SiteService, public title: Title) {
+    }
 
-    this.service.get().then(site=>{
-      this.title=site.title;
-      console.log(this.title);
-    });
-  }
+    ngOnInit() {
+        this.primengConfig.zIndex = {
+            modal: 1100,    // dialog, sidebar
+            overlay: 1000,  // dropdown, overlaypanel
+            menu: 1000,     // overlay menus
+            tooltip: 1100   // tooltip
+        };
+
+        this.service.get().subscribe((response: {}) => {
+            this.site = response;
+            this.title.setTitle(this.site.bannerTitle);
+        })
+    }
 
 }

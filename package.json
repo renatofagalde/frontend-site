@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "heroku-postbuild": "ng build",
-    "postinstall": "ng build --configuration prd --vendor-chunk --aot=true  --output-hashing=all"
+    "postinstall": "ng build --vendor-chunk --aot=true  --output-hashing=all"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +22,8 @@
     "@angular/router": "^16.1.0",
     "express": "^4.18.2",
     "font-awesome": "^4.7.0",
+    "humps": "^2.0.1",
+    "lodash": "^4.17.21",
     "path": "^0.12.7",
     "primeflex": "^3.3.1",
     "primeicons": "^6.0.1",
@@ -36,6 +38,7 @@
     "@angular/cli": "~16.1.5",
     "@angular/compiler-cli": "^16.1.0",
     "@types/jasmine": "~4.3.0",
+    "@types/lodash": "^4.14.202",
     "@types/node": "^20.10.4",
     "enhanced-resolve": "^3.3.0",
     "jasmine-core": "~4.6.0",
@@ -46,7 +49,7 @@
     "karma-jasmine-html-reporter": "~2.1.0"
   },
   "engines": {
-    "node": "18.15.0",
-    "npm": "9.5.0"
+    "node": "18.13.0",
+    "npm": "9.2.0"
   }
 }
